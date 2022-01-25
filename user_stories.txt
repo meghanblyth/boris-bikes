@@ -14,7 +14,7 @@ Objects         | Messages
 ----------------|----------------
 person          | 
 bike            | use_bike
-docking_station | release_a_bike
+docking_station | release
 
 User Story 2
 Nouns:
@@ -34,3 +34,11 @@ Objects         | Messages
 person          | 
 bike            | use
 bike            | see_if_working
+
+Merge:
+
+Objects         | Messages
+----------------|----------------
+Person          | 
+Bike            | working?
+DockingStation  | release_bike
