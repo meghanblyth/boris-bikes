@@ -1,0 +1,36 @@
+User story 1 
+Nouns:
+----
+person
+bike
+docking_station
+
+Verbs:
+----
+use 
+release
+
+Objects         | Messages
+----------------|----------------
+person          | 
+bike            | use_bike
+docking_station | release_a_bike
+
+User Story 2
+Nouns:
+---
+person
+bike
+
+Verbs:
+---
+use 
+see
+working
+
+
+Objects         | Messages
+----------------|----------------
+person          | 
+bike            | use
+bike            | see_if_working
