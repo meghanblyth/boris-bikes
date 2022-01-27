@@ -1,4 +1,4 @@
-require 'docking_station'
+require_relative '../lib/docking_station'
 
 describe DockingStation do 
 
@@ -16,10 +16,21 @@ describe DockingStation do
     it { is_expected.to respond_to :release_bike }
   end
 
-  it 'docks something' do 
-    bike = Bike.new 
-    expect(subject.dock(bike)).to eq bike 
-  end 
+  it { is_expected.to respond_to(:dock).with(1).argument }
+
+  describe "#dock" do
+    it 'docks something' do 
+      bike = Bike.new 
+      expect(subject.dock(bike)).to eq bike 
+    end
+
+    it "raises and error when the dock is full" do
+      subject.dock(Bike.new)
+      expect{ subject.dock(Bike.new) }.to raise_error "The Docking Station is full"
+    end
+
+  end
+   
 
   it 'returns docked bikes' do 
     bike = Bike.new
@@ -27,7 +38,7 @@ describe DockingStation do
     expect(subject.bike).to eq bike 
   end 
 
-  it { is_expected.to respond_to(:dock).with(1).argument }
+  
 
   it { is_expected.to respond_to(:bike) } 
 
